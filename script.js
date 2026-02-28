@@ -1,7 +1,6 @@
-JAVASCRIPT - CHATZZERIA
+//JAVASCRIPT - CHATZZERIA
 
-const apiKey = "SUA-CHAVE-API"
-
+const apiKey = "6ArLGYzuwwMzltGxKft98M7gkcKw9hBMHUfbNs87XGjYKxks1aD2JQQJ99CBACYeBjFXJ3w3AAABACOGbwGp";
 
 
 // ------------------- ELEMENTOS DA PÁGINA -------------------
@@ -15,14 +14,20 @@ const divResultadosOCR = document.getElementById("div_resultados_ocr");
 
 // ------------------- FUNÇÃO PRINCIPAL (AZURE OPENAI) -------------------
 function callAzureOpenAI(pergunta2) {
-  const url =`SUA-URL`
+
+  const url = `https://canudo-de-papel.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview`;
 
   // Configuração da requisição (o que será enviado para a API)
   const config = {
     messages: [
       {
         role: "system",
-        content: `c`,
+        content: `Você é um especialista em pizzas e só pode responder sobre esse assunto. 
+Se a pergunta não for relacionada a pizzas, responda: 
+"Desculpe, só posso responder sobre as pizzas disponíveis." 
+Informe sempre que existem três tipos de massa (Tradicional, Fina e Integral) 
+e três tamanhos (Média - 6 fatias, Grande - 8 fatias, Família - 12 fatias). 
+Seja sempre amigável e objetivo em suas recomendações.`,
       },
       {
         // "user" é a mensagem enviada pelo usuário
@@ -71,12 +76,12 @@ function addMessageToChat(className, messageContent) {
     secaoConversa.innerHTML += `
 <div class="div_card_conversa" id="${className}">
 <button type="button">
-<img id="img_audio" src="../assets/img/audio.svg" alt="Botão de áudio">
+<img id="img_audio" src="../img/audio.svg" alt="Botão de áudio">
 </button>
 
 <p>${messageContent}</p>
 
-<img id="img_bot" src="../assets/img/bot.svg" alt="Imagem do robô">
+<img id="img_bot" src="../img/bot.svg" alt="Imagem do robô">
 </div>
 `;
   } else {
@@ -100,6 +105,3 @@ document.querySelector("form").addEventListener("submit", (event) => {
 
   pergunta.value = "";
 });
-
-
-
