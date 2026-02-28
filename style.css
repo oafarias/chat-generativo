@@ -2,10 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
 }
 
 #cabecalho>img {
     margin: 30px 0;
+    width: 100px;
 }
 
 .container {
@@ -33,12 +37,13 @@
 }
 
 #footer_pergunta {
-    background-color: #f1f1f1;
+    background-color: #000000;
     width: 100%;
     height: 79px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid #f1f1f1;
     border-radius: 7px;
     padding: 1%;
     gap: 1%;
@@ -52,6 +57,7 @@
 
 #footer_pergunta>textarea {
     border: none;
+    color: #f1f1f1;
     background-color: transparent;
     width: 100%;
     outline: none;
@@ -59,13 +65,15 @@
     overflow-y: auto;
     font-size: 1em;
 }
-
+#footer_pergunta>button>img {
+    width: 50px;
+}
 .div_card_conversa {
     display: flex;
     align-items: flex-start;
 }
 
-.div_card_conversa>p {
+.markdown-body {
     border-radius: 7px;
     width: 100%;
     max-width: 468px;
@@ -73,23 +81,31 @@
     padding: 1%;
 }
 
+.markdown-body p { margin-bottom: 10px; }
+.markdown-body ul, .markdown-body ol { margin-left: 20px; }
+
 #div_card_conversa_chat {
     justify-content: flex-end;
     gap: 10px;
 }
 
-#div_card_conversa_usuario>p {
-    background-color: #f1f1f1;
-    color: #000;
+#div_card_conversa_usuario .markdown-body {
+    border: #f1f1f1 1px solid;
+    border-radius: 15px;
+    background-color: #000000;
+    color: #f1f1f1;
 }
 
-#div_card_conversa_chat>p {
-    background-color: #f09600;
+#div_card_conversa_chat .markdown-body {
+    border: #f1f1f1 1px solid;
+    border-radius: 15px;
+    background-color: #000000;
+    color: #fff;
 }
 
 #img_audio,
 #img_bot {
     border-radius: 29px;
-    border: 1px solid #00000020;
+    border: 1px solid #000000;
     padding: 10px;
 }
